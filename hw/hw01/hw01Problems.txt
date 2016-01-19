@@ -57,6 +57,8 @@ Complete the following problems:
        
     c) Suppose you have an signed 12-bit integer. What are the minimum
        and maximum values that could be encoded by this type?
+
+4) Edit your github profile and include a professional picture.
        
        
    
