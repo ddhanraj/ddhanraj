@@ -1,0 +1,7 @@
+Complete the VI FunctionGraph.vi by implementing code to create the proper
+graph when the update button is pressed. (Add code where it says "Place your
+code here.) Note that the indicator "Function XY Graph" is an XY Graph indicator.
+
+Bonus Challenge: Replace Function XY Graph with a Waveform Graph indicator. Modify
+your code to achieve the same functionality as before. Save the modified VI as
+"FunctionWaveformGraph.vi"

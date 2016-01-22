@@ -1,0 +1,5 @@
+1) Save "Two Processes.vi" as "Two Processes One Stop.vi"
+
+2) Modify "Two Processes One Stop.vi" to use a single stop button to stop both loops.
+
+Hint: Local Variables.

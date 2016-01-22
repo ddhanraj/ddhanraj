@@ -1,0 +1,22 @@
+ME5990 - Spring 2016
+Homework 02
+Due: 8:05 AM, Feb. 4, 2016
+
+Complete the following problems:
+
+0) Read in the LabVIEW help file (access via the LabVIEW Help Menu) the following sections:
+
+a) Fundamentals -> Loops and other Structures
+b) Fundamentals -> Graphs and Charts
+
+Select the "Contents" tab on the left to view the sections of the help file.
+
+After reading these sections, complete the problem01 - problem14 in this folder. Each problem
+has a problem pdf or text file. Those created by NI will typically walk you through
+the exercise. Those created by me are less guided. Save the VI or VIs in the folder specified.
+Some problems have a bonus challenge written by me.
+
+Note that a number of the NI instructions say that you will find the "needed" VIs in the 
+"Exercise" subfolder. If you find that there are no VIs in the subfolder, or that the
+subfolder doesn't exist, it is because there are actually no needed VIs. You must created
+them all.

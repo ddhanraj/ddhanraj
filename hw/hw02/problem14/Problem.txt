@@ -1,0 +1,5 @@
+Navigate a browser to
+
+http://www.ni.com/white-paper/7593/en/
+
+Complete the exercise and save the VIs in this folder.
