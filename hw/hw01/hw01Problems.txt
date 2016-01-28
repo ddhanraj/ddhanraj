@@ -42,8 +42,8 @@ Complete the following problems:
       145:
       -356:
       100000:
-      -300000000:
-      300000000:
+      -3000000000:
+      3000000000:
       
     b) You are measuring the displacement (distance) of a cylinder in and
        engine. The total uncertainty of your measurement is 1%. All other
