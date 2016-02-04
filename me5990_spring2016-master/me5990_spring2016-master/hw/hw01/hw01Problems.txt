@@ -17,7 +17,8 @@ Complete the following problems:
      your local repository.
      
   d) Run git status again to make sure that the change has been committed.
-  
+ Ans-1) done
+ 
 2) Using LabVIEW, create a new VI in this folder. Do the following:
    
    a) Place at least two numeric controls and one indicator on the front
@@ -32,6 +33,7 @@ Complete the following problems:
    d) Add the file to your local repository with git add
    
    e) Commit the changes
+Ans-2) Done
    
 3) Edit this file to write the answers to the following questions. After
    editting the file, be sure to commit the changes.
@@ -39,13 +41,18 @@ Complete the following problems:
    a) What is the smallest integer datatype that can represent the 
       following numbers. Note if signed or unsigned will work
       
-      145:
-      -356:
-      100000:
-      -300000000:
-      300000000:
-      
-    b) You are measuring the displacement (distance) of a cylinder in and
+      		 145:
+      		-356:
+     		 100000:
+     		-300000000:
+      		 300000000:
+     Ans-a)     145:U8
+      	       -356:I16
+      		100000:I32 or U32
+      	       -300000000:I32
+      		300000000:I32 or U32      
+    
+   b) You are measuring the displacement (distance) of a cylinder in and
        engine. The total uncertainty of your measurement is 1%. All other
        things being equal, what is the best choice of datatype to store
        an individual measurement?
@@ -54,12 +61,14 @@ Complete the following problems:
        ii) double-precision float
        iii) unsigned 32-bit integer
        iv) string
-       
+   Ans-b) i) single-precision float
+	    
     c) Suppose you have an signed 12-bit integer. What are the minimum
        and maximum values that could be encoded by this type?
+   Ans-c) for signed 12-bit integer the minimum and maximum values are -2048 to 2047
 
 4) Edit your github profile and include a professional picture.
-       
+   Ans-4) done on github     
        
    
    
