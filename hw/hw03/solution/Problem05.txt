@@ -1,0 +1,13 @@
+i) According to the Nyquist-Shannon sampling theorm, Billy needs 
+2*22.5 kHz = 45 kHz sampling speed.
+
+ii) Billy could implement an analog low-pass or notch filter prior to his DAQ.
+Alternatively, Billy could acquire at the sampling speed above (or
+higher) and implement a digital filter to remove the noise from his data.
+Alternatively, Billy could average numerous samples to reduce the noise.
+
+iii) Assuming the Billy implemented an analog filter, he needs to sample at
+at at least 200 Hz.
+
+iv) Using f_a = |n*f_s - f_0|, and choosing either n=22 or n=23 to minimize f_a,
+the alias will appear at 500 Hz.

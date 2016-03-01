@@ -1,0 +1,15 @@
+i) Sensor A is an rotary encoder. Counter-timers are the best DAQ type for encoders.
+
+ii) Sensor B is a rotary potentiometer. When properly powered, it has an analog voltage output.
+Alternatively, a device which can directly measure resistance could be used. In either case,
+analog input is the best DAQ type.
+
+iii) In both cases, a power sources is needed.
+
+iv) The encoder only has 128 lines per revolution, or a resolution of 360/128 = 2.8 deg.
+Therefore, it would be better to use the rotary pot for small angle measurements.
+
+v) The rotary pot has a limited number of turns (1). Therefore, it is not suitable
+to measure multiple revolutions of anything.
+
+
