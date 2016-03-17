@@ -1,0 +1,45 @@
+digraph {
+	graph [bgcolor=transparent, dpi=300];
+	rankdir=LR;
+    node [fontname="Sans", fontsize=12, fillcolor="#AAAAFF:#DDDDFF", gradientangle=90, style=filled];
+	edge [fontname="Sans", fontsize=10];
+	
+	START [fillcolor="white"];
+	init   [label="Initialize"];
+	idle  [label="Idle"];
+	error [label="Check\nErrors"];
+	quit  [label="Finalize"];
+	config [label="Configure\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+	start [label="Start\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+	data  [label="Acquire\nand Log", fillcolor="#FFAAAA:#FFDDDD"];
+	stop  [label="Stop\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+	clear [label="Clear\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+	open  [label="Open\nLog File", fillcolor="#AAFFFF:#DDFFFF"];
+	close [label="Close\nLog File", fillcolor="#AAFFFF:#DDFFFF"];
+	proc1 [label="Process 1", fillcolor="#FFFFAA:#FFFFDD"];
+	exit [label="Exit", shape="octagon", fillcolor="#DD0000", style=filled];
+ 
+    START -> init;
+	init -> idle;
+	idle -> config [label="Acquire Data\n-> True"];
+	config -> start;
+	start -> error [label="Enable Timeout"];
+	idle -> stop [label="Acquire Data\n-> False"];
+	stop -> clear;
+	clear -> error [label="Disable Timeout"];
+	idle -> open [label="Log Data\n-> True"];
+	open -> error;
+	idle -> close [label="Log Data\n-> False"];
+	close -> proc1 [label="No Error"];
+	close -> error [label="Error"];
+	idle -> data [label="Timeout\nexpires"];
+	data -> error;
+	error -> idle [label="No error or\nerror ignored"];
+	error -> quit [label="Error and\nuser quits"];
+	idle -> quit [label="Stop\npressed"];
+	idle -> proc1 [label="Process 1\npressed"];
+	proc1 -> error;
+	quit -> exit;
+	
+//	{rank = same; timer1; timer2;}
+}
