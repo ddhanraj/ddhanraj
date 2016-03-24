@@ -1,0 +1,18 @@
+digraph {
+	graph [bgcolor=transparent];
+    node [fontname="Sans", fontsize=12, fillcolor="#AAAAFF:#DDDDFF", gradientangle=90, style=filled];
+	edge [fontname="Sans", fontsize=10];
+	
+	START [fillcolor="white"];
+	idle [label="Idle"];
+	process1 [label="Process 1"];
+	process2 [label="Process 2"];
+	exit [label="Exit", shape="octagon", fillcolor="#DD0000", style=filled] exit;
+ 
+    START -> idle;
+    idle -> process1 [label="Process 1\npressed"];
+    process1 -> idle [label="Done"];
+    idle -> process2 [label="Process 2\npressed"];
+    process2 -> idle [label="Done"];
+	idle -> exit [label="Stop\npressed"]
+}

@@ -1,0 +1,66 @@
+ME5990 - Spring 2016
+Homework 01
+Due: 8:05 AM, January 26, 2016
+
+Complete the following problems:
+
+1) In this folder, you will find a file named Problem1.txt. 
+  
+  a) Using a text editor, edit the file by putting your name at the bottom.
+    (Notepad, installed with Windows will work. I recommend installing
+    Notepad++ to get a full featured text editor. 
+    https://notepad-plus-plus.org/)
+  
+  b) Run git status to see that the file has been editted
+  
+  c) Follow the class Git Instructions document to commit this change to
+     your local repository.
+     
+  d) Run git status again to make sure that the change has been committed.
+  
+2) Using LabVIEW, create a new VI in this folder. Do the following:
+   
+   a) Place at least two numeric controls and one indicator on the front
+      panel.
+      
+   b) Perform some operation in the block diagram (this could be as simple
+      as adding the two numbers and outputing the result, but it's up
+      to you).
+      
+   c) Save the VI as "Solution2.vi"
+      
+   d) Add the file to your local repository with git add
+   
+   e) Commit the changes
+   
+3) Edit this file to write the answers to the following questions. After
+   editting the file, be sure to commit the changes.
+   
+   a) What is the smallest integer datatype that can represent the 
+      following numbers. Note if signed or unsigned will work
+      
+      145:
+      -356:
+      100000:
+      -3000000000:
+      3000000000:
+      
+    b) You are measuring the displacement (distance) of a cylinder in and
+       engine. The total uncertainty of your measurement is 1%. All other
+       things being equal, what is the best choice of datatype to store
+       an individual measurement?
+       
+       i) single-precision float
+       ii) double-precision float
+       iii) unsigned 32-bit integer
+       iv) string
+       
+    c) Suppose you have an signed 12-bit integer. What are the minimum
+       and maximum values that could be encoded by this type?
+
+4) Edit your github profile and include a professional picture.
+       
+       
+   
+   
+    

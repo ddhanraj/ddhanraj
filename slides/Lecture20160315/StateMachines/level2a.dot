@@ -1,0 +1,29 @@
+digraph {
+	graph [bgcolor=transparent];
+	rankdir=TB;
+    node [fontname="Sans", fontsize=12, fillcolor="#AAAAFF:#DDDDFF", gradientangle=90, style=filled];
+	edge [fontname="Sans", fontsize=10];
+	
+	START [fillcolor="white"];
+	clocks [label="Check\nClocks"];
+	inputs [label="Check\nInputs"];
+	timer1 [label="Update Clock"];
+	timer2 [label="Update Graph"];
+	timersonoff [label="Enable/Disable Timer"];
+	exit [label="Exit", shape="octagon", fillcolor="#DD0000", style=filled];
+ 
+    START -> inputs;
+    inputs -> clocks [label="Any timer\nenabled"];
+	inputs -> inputs [label="All timers\ndisabled"];
+	clocks -> inputs [label="Timers\nnot expired"];
+	clocks->timer1 [label="Timer 1\nexpired"];
+	clocks->timer2 [label="Timer 2\nexpired"];
+	timer1 -> clocks;
+	timer2 -> clocks;
+	inputs -> timersonoff [label="Timer Enabled\nor Disabled"];
+	timersonoff->inputs [label="All timers\ndisabled"];
+	timersonoff->clocks [label="Any timer\nenabled"];
+	inputs -> exit [label="Stop\npressed"];
+		
+	{rank = same; timer1; timer2;}
+}

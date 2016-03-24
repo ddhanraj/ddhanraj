@@ -1,0 +1,83 @@
+digraph {
+
+	graph [bgcolor=transparent, dpi=300];
+	rankdir=LR;
+    node [fontname="Sans", fontsize=12, fillcolor="#AAAAFF:#DDDDFF", gradientangle=90, style=filled];
+	edge [fontname="Sans", fontsize=10];
+	
+	START [fillcolor="white"];
+	exit [label="Exit", shape="octagon", fillcolor="#DD0000", style=filled];
+	
+	subgraph cluster_master {
+		label="Master";
+		labeljust = "l";
+		style=rounded;
+		
+		init   [label="Initialize"];
+		idle  [label="Idle"];
+		error [label="Check\nErrors"];
+		quit  [label="Finalize"];
+		config [label="Configure\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+		start [label="Start\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+		stop  [label="Stop\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+		clear [label="Clear\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+		open  [label="Open\nLog File", fillcolor="#AAFFFF:#DDFFFF"];
+		close [label="Close\nLog File", fillcolor="#AAFFFF:#DDFFFF"];
+	 
+		init -> idle;
+		idle -> config [label="Acquire Data\n-> True"];
+		config -> start;
+		start -> error [label="Enable Timeout"];
+		idle -> stop [label="Acquire Data\n-> False"];
+		stop -> clear;
+		clear -> error [label="Disable Timeout"];
+		idle -> open [label="Log Data\n-> True"];
+		open -> error;
+		idle -> close [label="Log Data\n-> False"];
+		close -> error;
+		error -> idle [label="No error or\nerror ignored"];
+		error -> quit [label="Error and\nuser quits"];
+		idle -> quit [label="Stop\npressed"];
+	}
+	
+	subgraph cluster_slave {
+		label = "Slave";
+		labeljust = "l";
+		style = rounded;
+		
+		
+		init2   [label="Initialize"];
+		idle2  [label="Idle"];
+		error2 [label="Check\nErrors"];
+		quit2  [label="Finalize"];
+		start2 [label="Start\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+		data2  [label="Acquire\nand Log", fillcolor="#FFAAAA:#FFDDDD"];
+		stop2  [label="Stop\nDAQ", fillcolor="#AAFFAA:#DDFFDD"];
+		file2 [label="Update\nFile Ref", fillcolor="#AAFFFF:#DDFFFF"];
+	 
+		init2 -> idle2;
+		idle2 -> start2 [label="StartDAQ\nnotifier received"];
+		start2 -> error2 [label="Enable\nTimeout"];
+		idle2 -> stop2 [label="StopDAQ\nnotifier received"];
+		stop2 -> error2 [label="Disable\ntimeout"];
+		idle2 -> file2 [label="UpdateFile\nnotifier received"];
+		file2 -> idle2;
+		idle2 -> data2 [label="Timeout\nexpires"];
+		data2 -> error2;
+		error2 -> idle2;
+		idle2 -> quit2 [label="Finalize\nnotifier received"];
+	}
+	
+	START -> init;
+	START -> init2;
+	quit -> exit;
+	quit2 -> exit;
+	
+	stop -> idle2 [style=dotted, color="#888888", label="StopDAQ"];
+	start -> idle2 [style=dotted, color="#888888", label="StartDAQ"];
+	open -> idle2 [style=dotted, color="#888888", label="UpdateFile"];
+	close -> idle2 [style=dotted, color="#888888", label="UpdateFile"];
+	quit -> idle2 [style=dotted, color="#888888", label="Finalize"];
+	
+//	{rank = same; idle; idle2;}
+}
