@@ -1,0 +1,4 @@
+Complete the Message Based DAQ VI so that it recreates the functionality of
+Produce-Consumer DAQ (which is very similar to State Machine DAQ).
+
+Place ALL DAQmx VIs in the Slave Loop.
